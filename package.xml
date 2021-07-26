@@ -1,0 +1,17 @@
+<package format="2">
+  <name>doosan_opcua</name>
+  <version>0.0.0</version>
+  <description>
+    The doosan_opcua package
+  </description>
+  <license>TODO</license>
+
+  <maintainer email="nicola@sysdesign.it">Nicola Conti</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>dsr_launcher</exec_depend>
+  <exec_depend>ros_opcua_impl_python_opcua</exec_depend>
+
+</package>

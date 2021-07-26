@@ -1,0 +1,21 @@
+<launch>
+  <env name="ROS_PYTHON_LOG_CONFIG_FILE"
+       value="$(find doosan_opcua)/python_logging.conf" />
+
+  <!-- Launch Doosan Robot -->
+  <include file="$(find dsr_launcher)/launch/dsr_moveit.launch">
+    <arg name="mode"  value="virtual"/>
+    <arg name="model" value="m1013"/>
+    <arg name="rviz"  value="false"/>
+  </include>
+
+  <!-- OPC-UA Server -->
+  <node name="rosopcua" pkg="ros_opcua_impl_python_opcua" type="ros_server.py" output="screen">
+    <rosparam file="$(find doosan_opcua)/config/opcua_server.yaml"/>
+  </node>
+
+  <!-- Rviz -->
+  <node name="$(anon rviz)" pkg="rviz" type="rviz" output="screen"
+    args="-d $(find doosan_opcua)/rviz/demo.rviz"/>
+
+</launch>

@@ -1,0 +1,43 @@
+###################
+## OPC-UA Server ##
+###################
+server:
+  endpoint: "opc.tcp://localhost:4840"
+  name: "ROSServer"
+
+topics:
+  whitelist:
+    - /joint_states
+
+services:
+  whitelist:
+    - /dsr01m1013/modbus/config_create_modbus
+    - /dsr01m1013/modbus/config_delete_modbus
+    - /dsr01m1013/modbus/get_modbus_input
+    - /dsr01m1013/modbus/set_modbus_output
+    - /dsr01m1013/motion/alter_motion
+    - /dsr01m1013/motion/change_operation_speed
+    - /dsr01m1013/motion/check_motion
+    - /dsr01m1013/motion/disable_alter_motion
+    - /dsr01m1013/motion/enable_alter_motion
+    - /dsr01m1013/motion/fkin
+    - /dsr01m1013/motion/ikin
+    - /dsr01m1013/motion/jog
+    - /dsr01m1013/motion/jog_multi
+    - /dsr01m1013/motion/move_blending
+    - /dsr01m1013/motion/move_circle
+    - /dsr01m1013/motion/move_home
+    - /dsr01m1013/motion/move_joint
+    - /dsr01m1013/motion/move_jointx
+    - /dsr01m1013/motion/move_line
+    - /dsr01m1013/motion/move_pause
+    - /dsr01m1013/motion/move_periodic
+    - /dsr01m1013/motion/move_resume
+    - /dsr01m1013/motion/move_spiral
+    - /dsr01m1013/motion/move_spline_joint
+    - /dsr01m1013/motion/move_spline_task
+    - /dsr01m1013/motion/move_stop
+    - /dsr01m1013/motion/move_wait
+    - /dsr01m1013/motion/set_ref_coord
+    - /dsr01m1013/motion/set_singularity_handling
+    - /dsr01m1013/motion/trans
